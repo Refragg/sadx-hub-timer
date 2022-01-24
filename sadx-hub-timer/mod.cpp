@@ -64,6 +64,8 @@ extern "C"
 	{
 		
 		int deltaTime = FrameCounter - previousFrameCounter;
+
+		float time = timer / 60.0;
 		if (GameState != 16)
 		{
 			color = 0xAF00AFFF;
@@ -71,9 +73,9 @@ extern "C"
 			SetDebugFontColor(0xFFFF7E00);
 			
 			char buf[32];
-			float recSize = strlen(itoa(timer, buf, 10)) * 1.5;
-			DrawDebugRectangle(1.0f, 1.0f, 11.0f + recSize, 3.5f);
-			DisplayDebugStringFormatted(NJM_LOCATION(1, 1), "TIME: %d", timer);
+			float recSize = strlen(itoa(time, buf, 10)) * 1.5;
+			DrawDebugRectangle(1.0f, 1.0f, 15.6f + recSize, 3.5f);
+			DisplayDebugStringFormatted(NJM_LOCATION(1, 1), "TIME: %.2f", time);
 		}
 		else
 		{
@@ -82,7 +84,7 @@ extern "C"
 			SetDebugFontColor(0xFFFF7E00);
 			
 			DrawDebugRectangle(1.0f, 1.0f, 26.0f, 8.0f);
-			DisplayDebugStringFormatted(NJM_LOCATION(1, 1), "TIME: %d", timer);
+			DisplayDebugStringFormatted(NJM_LOCATION(1, 1), "TIME: %.2f", time);
 			DisplayDebugStringFormatted(NJM_LOCATION(1, 2), "State: %s", TimerStateStrings[isStarted]);
 			DisplayDebugStringFormatted(NJM_LOCATION(1, 3), "Hubs to time: %d", hubsToTime);
 			
