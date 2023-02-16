@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<ConfigSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonicretro.org">
+  <Groups>
+    <Group name="Settings" display="SADX Hub Timer Settings">
+      <Property name="StopTimerButton" type="ControllerButton" defaultvalue="LB" display="Button to stop the timer" alwaysinclude="true">
+        <HelpText>The button that will stop the currently running timer</HelpText>
+      </Property>
+      <Property name="ResetTimerButton" type="ControllerButton" defaultvalue="RB" display="Button to reset the timer" alwaysinclude="true">
+        <HelpText>The button that will reset the timer to 0</HelpText>
+      </Property>
+
+      <Property name="HubsToTimePlusButton" type="ControllerButton" defaultvalue="RB" display="Button to increase the no of hubs to time" alwaysinclude="true">
+        <HelpText>The button that will increase the number of hubs to time (see README.txt)</HelpText>
+      </Property>
+      <Property name="HubsToTimeMinusButton" type="ControllerButton" defaultvalue="LB" display="Button to decrease the no of hubs to time" alwaysinclude="true">
+        <HelpText>The button that will decrease the number of hubs to time (see README.txt)</HelpText>
+      </Property>
+
+      <Property name="ModifierButton" type="ControllerButton" defaultvalue="Y" display="Modifier button" alwaysinclude="true">
+        <HelpText>The button that will help you modify various things about the mod (see README.txt)</HelpText>
+      </Property>
+
+      <Property name="PausesTimingButton" type="ControllerButton" defaultvalue="LB" display="Button to modify the timing of pauses" alwaysinclude="true">
+        <HelpText>The button that will change whether to time the pauses or not (see README.txt)</HelpText>
+      </Property>
+      <Property name="ManualStartButton" type="ControllerButton" defaultvalue="RB" display="Button to manually start the timer" alwaysinclude="true">
+        <HelpText>The button that will let you manually start the timer (see README.txt)</HelpText>
+      </Property>
+    </Group>
+  </Groups>
+  <Enums>
+    <Enum name="ControllerButton">
+      <EnumMember name="A" />
+      <EnumMember name="B" />
+      <EnumMember name="X" />
+      <EnumMember name="Y" />
+      <EnumMember name="Start" />
+      <EnumMember name="Back" />
+      <EnumMember name="DUp" display="DPad Up" />
+      <EnumMember name="DDown" display="DPad Down" />
+      <EnumMember name="DLeft" display="DPad Left" />
+      <EnumMember name="DRight" display="DPad Right" />
+      <EnumMember name="LB" display="Left Bumper" />
+      <EnumMember name="RB" display="Right Bumper" />
+      <EnumMember name="LT" display="Left Trigger" />
+      <EnumMember name="RT" display="Right Trigger" />
+    </Enum>
+  </Enums>
+</ConfigSchema>

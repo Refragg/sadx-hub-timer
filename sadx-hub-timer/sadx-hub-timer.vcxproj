@@ -93,7 +93,11 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>xcopy /Y /D "$(ProjectDir)mod.ini" "$(OutDir)"</Command>
+      <Command>
+        xcopy /Y /D "$(ProjectDir)mod.ini" "$(OutDir)"
+        xcopy /Y /D "$(ProjectDir)README.txt" "$(OutDir)"
+        xcopy /Y /D "$(ProjectDir)configschema.xml" "$(OutDir)"
+      </Command>
     </PreBuildEvent>
 	<!-- Put the location to copy the mod to here
     <PostBuildEvent>
@@ -112,6 +116,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="mod.ini" />
+    <None Include="README.txt" />
+    <Xml Include="configschema.xml">
+      <SubType>Designer</SubType>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\sadx-mod-loader\mod-loader-common\ModLoaderCommon\IniFile.hpp" />
@@ -119,11 +127,6 @@
     <ClInclude Include="KeyboardMouse.h" />
     <ClInclude Include="minmax.h" />
     <ClInclude Include="stdafx.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="configschema.xml">
-      <SubType>Designer</SubType>
-    </Xml>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
